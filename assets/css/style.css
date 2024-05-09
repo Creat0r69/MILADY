@@ -1,0 +1,1079 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Bubbleboddy Neue Trial';
+    font-weight: 300;
+    src: url('../fonts/BubbleboddyNeue-Light.woff');
+}
+
+@font-face {
+    font-family: 'Bubbleboddy Neue Trial';
+    font-weight: 400;
+    src: url('../fonts/bubbleboddyneue-regular.woff');
+}
+
+@font-face {
+    font-family: 'Bubbleboddy Neue Trial';
+    font-weight: 700;
+    src: url('../fonts/BubbleboddyNeue-Bold.woff');
+}
+
+@font-face {
+    font-family: 'Bubbleboddy Neue Trial';
+    font-weight: 800;
+    src: url('../fonts/BubbleboddyNeue-ExtraBold.woff');
+}
+
+body {
+    font-family: 'Bubbleboddy Neue Trial', sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+html {
+    scroll-padding-top: 91px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0231DC;
+}
+
+::selection {
+    background: #0231DC;
+    color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+a,
+.nav-link {
+    text-decoration: none;
+    transition: 0.2s linear;
+}
+
+.primary-btn {
+    font-size: 20px;
+    font-weight: 400;
+    padding: 15px;
+    border: 0;
+    color: #fff;
+    background: #2F4FFA;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+    min-width: 166px;
+    box-shadow: 4px 4px 0px #000;
+    margin: 0 4px 4px 0;
+}
+
+.secondary-btn {
+    background: #B92FFA;
+}
+
+.title-group {
+    margin-bottom: 60px;
+}
+
+.title-group p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 150%;
+    color: #C7C7C7;
+    max-width: 705px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+}
+
+.inner-gap {
+    padding-block: 150px;
+}
+
+/* loader */
+.loader-wrapper {
+    width: 100%;
+    z-index: 9999;
+    height: 100vh;
+    display: flex;
+}
+
+.loader {
+    width: 88px;
+    height: 84px;
+}
+
+.loader:before, .loader:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../images/favicon.png');
+    background-repeat: no-repeat;
+}
+
+.loader:after {
+    animation: pulse 1s infinite;
+    transform: perspective(336px) translateZ(0px);
+}
+
+@keyframes pulse {
+    100% {
+        transform: perspective(336px) translateZ(168px);
+        opacity: 0;
+    }
+}
+
+/* Header */
+header {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    padding-block: 13px;
+    transition: 0.2s linear;
+    border-bottom: 1px solid #000;
+    background: #F5EFFF;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.navbar {
+    padding: 0;
+}
+
+#navbar-right .navbar-nav {
+    gap: 16px;
+}
+
+#navbar-right .navbar-nav .nav-link {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    color: #000;
+    text-transform: capitalize;
+    padding: 10px 16px;
+}
+
+#navbar-right .navbar-nav .nav-link:focus,
+#navbar-right .navbar-nav .nav-link:hover,
+#navbar-right .navbar-nav .nav-link.active {
+    color: #000;
+}
+
+.toggle-menu-icon {
+    width: 24px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.toggle-menu-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    background: #000;
+}
+
+.toggle-menu-icon span:nth-child(1) {
+    top: 2px;
+}
+
+.toggle-menu-icon span:nth-child(2),
+.toggle-menu-icon span:nth-child(3) {
+    top: 10px;
+}
+
+.toggle-menu-icon span:nth-child(4) {
+    top: 18px;
+}
+
+.toggle-menu-icon.open span:nth-child(1) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+}
+
+.toggle-menu-icon.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.toggle-menu-icon.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.toggle-menu-icon.open span:nth-child(4) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Banner */
+.banner {
+    background: url('../images/banner-bg.png') no-repeat;
+    background-size: cover;
+    padding-block: 70px 85px;
+}
+
+.banner p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 150%;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.banner-content p {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 150%;
+    color: #000;
+    text-align: center;
+    text-transform: capitalize;
+    max-width: 1137px;
+    margin: 40px auto;
+}
+
+.banner h2 {
+    font-size: 42px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.swiper {
+    padding-bottom: 30px;
+}
+
+.swiper-pagination.swiper-pagination-bullets {
+    bottom: 0;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #2F4FFA;
+    opacity: 0.3;
+    position: relative;
+}
+
+.swiper-pagination-bullet-active::before {
+    position: absolute;
+    content: '';
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: 1px solid #2F4FFA;
+    left: -4px;
+    top: -4px;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.banner-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.banner-social a {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    flex-shrink: 0;
+    display: grid;
+    place-content: center;
+}
+
+a.facebook {
+    color: #337FFF;
+    background: #EDF4FF;
+}
+
+a.linkedin {
+    color: #006699;
+    background: #EEFAFF;
+}
+
+a.instagram {
+    color: #D82D7E;
+    background: #FAF5FC;
+}
+
+a.github {
+    color: #1B1F23;
+    background: #F5F5F5;
+}
+
+a.twitter {
+    color: #33CCFF;
+    background: #EEFBFF;
+}
+
+a.telegram {
+    color: #34AADF;
+    background: #E5F7FF;
+}
+
+a.discord {
+    color: #5865F2;
+    background: #EAECFE;
+}
+
+a.whatsapp {
+    color: #00D95F;
+    background: #ECFFF5;
+}
+
+a.reddit {
+    color: #FF4500;
+    background: #FFECE5;
+}
+
+/*  */
+.partner {
+    background: url('../images/partner-bg.png') no-repeat;
+    background-size: cover;
+    padding-block: 125px 150px;
+}
+
+.partner h2 {
+    text-align: center;
+    margin-bottom: 54px;
+}
+
+.partner-wrapper {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+.partner-card {
+    display: flex;
+    align-items: center;
+    padding: 24px 30px;
+    gap: 16px;
+    background: #F5EFFF;
+    box-shadow: 3px 3px 0px #000;
+    height: 100%;
+    margin: 0 3px 3px 0;
+}
+
+.partner-card h3 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+}
+
+/*  */
+.about {
+    background: url('../images/about-bg-line.png') no-repeat;
+    background-size: cover;
+}
+
+.about-left p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 150%;
+    text-transform: capitalize;
+}
+
+.about-right {
+    text-align: center;
+}
+
+/* claim */
+.claim {
+    background: url('../images/claim-bg.png') no-repeat;
+    background-size: cover;
+}
+
+/* How to buy */
+.how-buy {
+    background: url('../images/how-buy-bg.png') no-repeat;
+    background-size: cover;
+}
+
+.buy-card {
+    border: 1px solid #000;
+    background: rgba(245, 239, 255, 0.50);
+    box-shadow: 4px 4px 0px 0px #000;
+    padding: 24px;
+    margin: 0 4px 24px 0;
+}
+
+.buy-card.light {
+    background: #FFF6F7;
+}
+
+.buy-card h6 {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+}
+
+.buy-card p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 180%;
+    text-transform: capitalize;
+}
+
+/* trading */
+.trading {
+    background: url('../images/trading-bg.png') no-repeat;
+    background-size: cover;
+    padding-block: 66px;
+}
+
+.trading-right {
+    text-align: center;
+}
+
+.trading-wrapper {
+    border: 1px solid #000;
+    background: #FFF;
+    box-shadow: 6px 6px 0px 0px #000;
+    margin: 0 6px 6px 0;
+}
+
+.trading-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    background: #2F4FFA;
+    padding: 18px 24px;
+}
+
+.trading-header ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+ul.dots li {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.trading-body {
+    padding: 26px;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    max-width: 958px;
+    margin: 0 auto;
+}
+
+.trading-body p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 150%;
+    text-transform: capitalize;
+}
+
+.trading-body p span {
+    font-family: 'Poppins', sans-serif;
+}
+
+.payment-status {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.payment-status span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.status-border {
+    width: 100%;
+    height: 14px;
+    background: #000;
+    border-radius: 30px;
+    margin-block: 22px 32px;
+}
+
+.trading-body .primary-btn {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.trading-body h6 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: capitalize;
+}
+
+.copy-code-wrapper {
+    width: 100%;
+}
+
+.copy-code {
+    border-radius: 8px;
+    background: #FAF7FF;
+    padding: 16px 30px;
+}
+
+.copy-code input {
+    background: transparent;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    line-height: 150%;
+    text-transform: lowercase;
+    border: 0;
+    outline: 0;
+    width: 100%;
+}
+
+/* Tokenomics */
+.tokenomics {
+    background: url('../images/how-buy-bg.png') no-repeat;
+    background-size: cover;
+    padding-block: 130px;
+}
+
+.tokenomics-card {
+    border: 1px solid #000;
+    background: rgba(245, 239, 255, 0.50);
+    box-shadow: 4px 4px 0px 0px #000;
+    padding: 24px;
+    display: grid;
+    gap: 24px;
+    margin: 0 4px 4px 0;
+}
+
+.tokenomics-card span {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 150%;
+    text-transform: capitalize;
+}
+
+.tokenomics-card h5 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.tokenomics-card p {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 150%;
+    text-transform: capitalize;
+    word-break: break-word;
+}
+
+.tokenomics-card p span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+/* RoadMap */
+.roadmap {
+    background: url('../images/claim-bg.png') no-repeat;
+    background-size: cover;
+}
+
+.roadmap h2+p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 150%;
+    text-transform: capitalize;
+    margin-bottom: 54px;
+}
+
+.roadmap-card {
+    border: 1px solid #000;
+    background: #FFF;
+    box-shadow: 6px 6px 0px 0px #000;
+    margin: 0 6px 6px 0;
+    height: 100%;
+}
+
+.roadmap-card h3 {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 150%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #FFF;
+    text-transform: capitalize;
+    border-bottom: 1px solid #000;
+    background: #2F4FFA;
+    padding: 18px;
+}
+
+.roadmap-card ul {
+    padding: 16px 28px;
+    padding-left: 44px;
+    list-style: disc;
+    display: grid;
+    gap: 16px;
+}
+
+.roadmap-card ul li {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 150%;
+    text-transform: capitalize;
+    word-break: break-word;
+}
+
+.roadmap-card ul li span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+/* Footer */
+footer {
+    background: url('../images/footer-bg.png') no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.footer-wrapper {
+    display: grid;
+    gap: 40px;
+}
+
+.footer-wrapper p {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 150%;
+    text-transform: capitalize;
+}
+
+/* Responsive CSS */
+
+@media (min-width: 1500px) {
+    .container {
+        max-width: 1458px;
+    }
+}
+
+@media (max-width: 1500px) {}
+
+@media (max-width: 1400px) {
+    #navbar-right .navbar-nav {
+        gap: 10px;
+    }
+    .primary-btn {
+        font-size: 16px;
+        padding: 15px;
+        min-width: 126px;
+    }
+    /*  */
+    .inner-gap, .partner, .tokenomics {
+        padding-block: 100px;
+    }
+
+    .section-title {
+        font-size: 54px;
+    }
+
+    .partner h2 {
+        margin-bottom: 44px;
+    }
+
+    .partner-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 1199px) {
+    html {
+        scroll-padding-top: 79px;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #F5EFFF;
+        width: 100%;
+    }
+
+    #navbar-right .navbar-nav {
+        gap: 0;
+        max-width: 960px;
+        margin: 0 auto;
+        padding-block: 20px 10px;
+    }
+
+    .navbar-brand img {
+        width: 200px;
+    }
+
+    .primary-btn {
+        font-size: 16px;
+        padding: 12px;
+        min-width: 120px;
+    }
+
+    /*  */
+    .inner-gap, .partner, .tokenomics {
+        padding-block: 80px;
+    }
+
+    .section-title {
+        font-size: 48px;
+    }
+
+    .partner-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .partner-card {
+        padding: 20px;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        scroll-padding-top: 77px;
+    }
+
+    #navbar-right .navbar-nav {
+        gap: 0;
+        max-width: 720px;
+    }
+
+
+    header {
+        padding-block: 12px;
+    }
+
+    /*  */
+    .inner-gap, .partner, .tokenomics {
+        padding-block: 60px;
+    }
+
+    .section-title {
+        font-size: 42px;
+    }
+
+    .partner h2 {
+        margin-bottom: 30px;
+    }
+
+    .partner-card h3 {
+        font-size: 20px;
+    }
+
+    .banner h2 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .banner-social {
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .banner-social a {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .footer-wrapper p, .tokenomics-card span, .tokenomics-card p, .trading-body h6 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    html {
+        scroll-padding-top: 69px;
+    }
+
+    #navbar-right .navbar-nav {
+        max-width: 540px;
+    }
+
+    .primary-btn {
+        font-size: 16px;
+        padding: 8px 12px;
+        min-width: auto;
+    }
+
+    .navbar-brand img {
+        width: 160px;
+    }
+
+    /*  */
+    .inner-gap, .partner, .tokenomics, .banner {
+        padding-block: 50px;
+    }
+
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+    .partner-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .banner h2 {
+        font-size: 30px;
+    }
+
+    .banner-content p {
+        font-size: 20px;
+        margin: 30px auto;
+    }
+
+    .trading-body p,
+    .partner-card h3,
+    .payment-status span,
+    .roadmap-card ul li,
+    .about-left p {
+        font-size: 18px;
+    }
+
+    .trading-body .primary-btn {
+        font-size: 20px;
+    }
+
+    .about-left,
+    .tokenomics-right,
+    .how-buy-right {
+        text-align: center;
+    }
+
+    .roadmap-card h3,
+    .buy-card h6 {
+        font-size: 24px;
+    }
+
+    .roadmap-card h3 {
+        padding: 12px;
+    }
+
+    .footer-wrapper p,
+    .tokenomics-card span,
+    .tokenomics-card p,
+    .trading-body h6 {
+        font-size: 20px;
+    }
+
+    .copy-code input {
+        font-size: 16px;
+    }
+
+    .trading-body {
+        padding: 20px;
+    }
+
+    .tokenomics-card {
+        padding: 20px;
+        gap: 14px;
+    }
+
+    .roadmap-card ul {
+        padding: 16px;
+        padding-left: 30px;
+        gap: 10px;
+    }
+
+    .footer-wrapper {
+        gap: 25px;
+    }
+
+    .banner-social a {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .copy-code svg {
+        width: 16px;
+    }
+
+    .trading-header {
+        padding: 14px;
+    }
+
+    ul.dots li {
+        width: 10px;
+        height: 10px;
+    }
+
+    .action-menu svg {
+        width: 18px;
+    }
+
+    .footer-brand {
+        width: 180px;
+        margin: 0 auto;
+    }
+
+    .status-border {
+        height: 8px;
+        margin-block: 12px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    html {
+        scroll-padding-top: 67px;
+    }
+
+    #navbar-right .navbar-nav .nav-link {
+        font-size: 18px;
+    }
+
+    .primary-btn {
+        margin: 0 2px 2px 0;
+        box-shadow: 2px 2px 0px #000;
+    }
+
+    /*  */
+    .inner-gap, .partner, .banner, .trading {
+        padding-block: 40px;
+    }
+
+    .section-title {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .partner h2 {
+        margin-bottom: 24px;
+    }
+
+    .banner-content p {
+        font-size: 18px;
+        margin: 24px auto;
+    }
+
+    .banner h2 {
+        font-size: 26px;
+    }
+
+    .banner p {
+        font-size: 18px;
+    }
+
+    .partner-card {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .roadmap h2+p,
+    .footer-wrapper p, .tokenomics-card span, .tokenomics-card p, .trading-body h6 {
+        font-size: 18px;
+    }
+
+    .tokenomics-card,
+    .trading-body {
+        padding: 16px;
+    }
+
+    .copy-code {
+        padding: 12px;
+    }
+
+    body {
+        word-break: break-word;
+    }
+
+    .roadmap h2+p {
+        margin-bottom: 24px;
+    }
+
+    .tokenomics-card h5 {
+        font-size: 22px;
+    }
+
+    .footer-brand {
+        width: 150px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 440px) {
+    .navbar-brand img {
+        width: 130px;
+    }
+
+    /*  */
+    .section-title {
+        font-size: 30px;
+    }
+
+    .partner-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .banner h2 {
+        font-size: 20px;
+    }
+}
